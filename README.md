@@ -1,2 +1,2 @@
-# POO_java_listas
+# Programação Orientada a Objetos
 lista de exercícios POO
