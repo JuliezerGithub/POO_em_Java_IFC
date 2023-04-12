@@ -23,8 +23,10 @@ public class Programa6 {
 			valores3.vinicial = 1;
 			valores3.vfinal = 15;
 			valores3.contador = 1;
+			valores3.metodo = "For";
 
 		valores1.medotoWhile();
 		valores2.metodoDoWhile();
+		valores3.metodoFor();
 	}
 }

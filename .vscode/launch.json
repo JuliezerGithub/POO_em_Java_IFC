@@ -1,0 +1,56 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Programa1",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa1",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        },
+        {
+            "type": "java",
+            "name": "Programa2",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa2",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        },
+        {
+            "type": "java",
+            "name": "Programa3",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa3",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        },
+        {
+            "type": "java",
+            "name": "Programa4",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa4",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        },
+        {
+            "type": "java",
+            "name": "Programa5",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa5",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        },
+        {
+            "type": "java",
+            "name": "Programa6",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa6",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        }
+    ]
+}

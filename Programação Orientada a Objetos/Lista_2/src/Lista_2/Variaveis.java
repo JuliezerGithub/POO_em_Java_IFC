@@ -25,7 +25,15 @@ void metodoDoWhile() {
     }
     while(contador < 15);
     System.out.println("Calculo usando "+metodo+": ");
-    System.out.println("A soma de 1 até 15 é: "+vfinal);	
+    System.out.println("A soma de 1 até 15 é: "+vfinal+"\n");	
     
+}
+void metodoFor(){
+    System.out.println("Calculo usando "+metodo+": ");
+    for(contador = 1; contador < 15; contador++){
+        vfinal = vfinal + vinicial;
+		vinicial++;
+    }
+    System.out.println("A soma de 1 até 15 é: "+vfinal); 
 }
 }
