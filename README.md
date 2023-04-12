@@ -1,2 +1,2 @@
-# POO_java_lista1
-lista de exercícios 1 POO
+# POO_java_listas
+lista de exercícios POO
