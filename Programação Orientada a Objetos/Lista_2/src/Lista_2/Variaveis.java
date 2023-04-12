@@ -1,11 +1,15 @@
 package Lista_2;
 
 public class Variaveis {
-		//Declarando as variáveis
+		
+	//Declarando as variáveis Programa6
 		int vinicial;
         int vfinal;
         int contador;
         String metodo;
+        int x = 0, y = 0, confere = 0;
+        int N = 0;
+    //Declarando as variáveis Programa7    
 
 void medotoWhile() {
     System.out.println("Calculo usando "+metodo+": ");
@@ -36,4 +40,5 @@ void metodoFor(){
     }
     System.out.println("A soma de 1 até 15 é: "+vfinal); 
 }
+
 }
