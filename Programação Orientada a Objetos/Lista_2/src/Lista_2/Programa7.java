@@ -18,10 +18,12 @@ public class Programa7 {
 			int entrada = 0;
 			int valormenor = 0;
 			int valormaior = 0;
+			int i = 0;
 
 			try (Scanner sc = new Scanner(System.in)) {
 				System.out.println("Digite o número de elementos que serão comparados: ");
 				elementos = sc.nextInt();
+			
 
 			if (valormaior == 0){ //atribui a entrada como maior valor no primeiro ciclo
 				valormaior = entrada;
@@ -29,18 +31,23 @@ public class Programa7 {
 			
 			} else if (valormenor < valormaior){
 				valormenor = entrada;
-			
+				System.out.println("Valor menor: "+valormenor);
 			} else {
 				valormaior = entrada;
-			
+				System.out.println("Valor maior: "+valormaior);
 			}
-		 
+		
 
+		
+		
 		}
+		i++;
+	}
 		while(i < elementos);
 	}
 	public static void main(String[] args) {
-		
+		Programa7 rodar = new Programa7();
+		rodar.Programa7();
 
 
 	}

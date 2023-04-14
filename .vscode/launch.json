@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Programa7",
+            "request": "launch",
+            "mainClass": "Lista_2/Lista_2.Programa7",
+            "projectName": "POO_em_Java_IFC_4593df4f"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
