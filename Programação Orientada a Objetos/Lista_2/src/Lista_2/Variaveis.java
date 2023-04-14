@@ -6,6 +6,7 @@ public class Variaveis {
 		int vinicial;
         int vfinal;
         int contador;
+        int entrada;
         String metodo;
         int x = 0, y = 0, confere = 0;
         int N = 0;
