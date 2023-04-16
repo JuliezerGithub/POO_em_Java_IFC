@@ -17,12 +17,13 @@ public class Exemplo_5 {
 			System.out.print(cont+" , ");
 			cont++; //cont = cont+1 - Padrão fica no final do while
 		}
-		Scanner sc = new Scanner(System.in);
-		int sair = 1;
-		while(sair!=0)
-		{
-			System.out.print("\nDigite 0 para Sair: ");
-			sair= sc.nextInt();
+		try (Scanner sc = new Scanner(System.in)) {
+			int sair = 1;
+			while(sair!=0)
+			{
+				System.out.print("\nDigite 0 para Sair: ");
+				sair= sc.nextInt();
+			}
 		}
 		System.out.print("\nSaiu do laço! ");
 	}

@@ -15,7 +15,7 @@ public class Programa1 {
         // Uso de for para percorrer os número de 1 até N:
         for (x = 1; x <= N; x++) {
 
-            // Descarta 0 e 1 (Não são primos e nem compostos):
+            // Descarta 0 e 1 (Não sãoi primos e nem compostos):
             if (x == 1 || x == 0) {
                 continue; // continua em todas as verificações
             }
@@ -36,7 +36,7 @@ public class Programa1 {
     }
 
     public static void main(String[] args) {
-        int N = 50;
+        int N = 100;
 
         prime_N(N);
     }

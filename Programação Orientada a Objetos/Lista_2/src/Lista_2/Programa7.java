@@ -9,47 +9,42 @@ deve ser enviada uma mensagem. Esses valores (zero e negativos) não entrarão n
 cálculos. */
 
 public class Programa7 {
-	
-	//Fazer com For e DoWhile
-	void Programa7 (){
-		do{
-			// variáveis:
-			int elementos = 0;
-			int entrada = 0;
-			int valormenor = 0;
-			int valormaior = 0;
-			int i = 0;
-
-			try (Scanner sc = new Scanner(System.in)) {
-				System.out.println("Digite o número de elementos que serão comparados: ");
-				elementos = sc.nextInt();
-			
-
-			if (valormaior == 0){ //atribui a entrada como maior valor no primeiro ciclo
-				valormaior = entrada;
-				valormenor = entrada;
-			
-			} else if (valormenor < valormaior){
-				valormenor = entrada;
-				System.out.println("Valor menor: "+valormenor);
-			} else {
-				valormaior = entrada;
-				System.out.println("Valor maior: "+valormaior);
-			}
-		
-
-		
-		
-		}
-		i++;
-	}
-		while(i < elementos);
-	}
 	public static void main(String[] args) {
-		Programa7 rodar = new Programa7();
-		rodar.Programa7();
+	try (Scanner scanner = new Scanner(System.in)) {
+		
+		/*Integer é uma classe Wrapper do tipo primitivo int, ou seja, uma tipologia que quando você declara não é inicializada pela linguagem. O integer aceita o mesmo tipo de valores que a o int.
+		 * Quando você cria uma variável int e não define nenhum valor, ela é automaticamente definida como , mas e se você quiser saber se ela está sem nenhum valor sabendo que 0 também pode ser uma possibilidade? 
+		 * É ai que entra o Integer.Sua principal diferença é que, na declaração, Integer começa com letra maiúscula e possibilita a declaração de valores nulos. Sendo assim, mesmo que o usuário digitou 0 você saberá que ele digitou algo. 
+		 * Caso não tenha digitado nada a variável traz um valor nulo ("null). 
+		*/
+		
+		int maior = Integer.MIN_VALUE;
+		int menor = Integer.MAX_VALUE;
 
+		System.out.print("Digite um valor inteiro positivo (ou 0 para encerrar): ");
+		int valor = scanner.nextInt();
 
+		while (valor != 0) {
+		    if (valor < 0) {
+		        System.out.println("Valor inválido. Digite novamente.");
+		    } else {
+		        if (valor > maior) {
+		            maior = valor;
+		        }
+		        if (valor < menor) {
+		            menor = valor;
+		        }
+		    }
+		    System.out.print("Digite um valor inteiro positivo (ou 0 para encerrar): ");
+		    valor = scanner.nextInt();
+		}
+		
+		if (maior == Integer.MIN_VALUE && menor == Integer.MAX_VALUE) {//Se o usuário não digitar nenhum valor:
+		    System.out.println("Nenhum valor válido foi digitado.");
+		} else {//Mostrando os valores:
+		    System.out.println("Maior valor: " + maior);
+		    System.out.println("Menor valor: " + menor);
+		}
 	}
 }
-
+}

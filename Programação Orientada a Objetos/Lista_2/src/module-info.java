@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author juliezer.008536
+ * @author julie
  *
  */
 module Lista_2 {

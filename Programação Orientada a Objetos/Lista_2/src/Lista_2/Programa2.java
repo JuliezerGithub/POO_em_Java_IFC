@@ -17,7 +17,7 @@ public class Programa2 {
 			System.out.println("O número é negativo");
 			
 		}else {
-			System.out.println("O número é positivo");
+			System.out.println("O número é possitivo");
 		}
 		
 		return;
