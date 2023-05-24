@@ -1,12 +1,14 @@
 package tela;
 
 import java.awt.EventQueue;
+import java.awt.Rectangle;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import banco.Gerenciador;
 import model.Aluno;
 
 import javax.swing.JButton;
@@ -49,6 +51,7 @@ public class Cadastro {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+				
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(240, 240, 240));
 		frame.setBounds(100, 100, 416, 212);
@@ -85,6 +88,12 @@ public class Cadastro {
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
+				TelaAluno tela =  new TelaAluno();
+				Rectangle bounds = frame.getBounds();
+				tela.show(bounds.x, bounds.y);
+				frame.dispose();
+				
 			}
 		});
 		btnCancelar.setBounds(10, 107, 182, 42);
@@ -103,14 +112,33 @@ public class Cadastro {
 					JOptionPane.showMessageDialog(null, "Obrigatório Curso!");
 				}else 
 				{
+					JOptionPane.showMessageDialog(null, "Cadastro Efetuado!");
 					novoAluno = new Aluno(Integer.parseInt(txtRA.getText()),txtNome.getText(), txtCurso.getText());
 				}
 				//Inserir o Aluno no TXT
+				Gerenciador g = new Gerenciador();
 				
+				if(!g.insere(novoAluno)) 
+				{
+					JOptionPane.showMessageDialog(null, "Cadastro não efetuado");
+				}
+				
+				TelaAluno tela =  new TelaAluno();
+				Rectangle bounds = frame.getBounds();
+				tela.show(bounds.x, bounds.y);
 				frame.dispose();//fechar a janela
+				
 			}
 		});
 		btnCadastrar.setBounds(208, 107, 182, 42);
 		frame.getContentPane().add(btnCadastrar);
+	}
+	
+	public void show(int x, int y) 
+	{
+		Rectangle bounds = frame.getBounds();
+		frame.setBounds(x,y,bounds.width,bounds.height);
+		frame.setVisible(true);
+		
 	}
 }

@@ -1,6 +1,7 @@
 package tela;
 
 import java.awt.EventQueue;
+import java.awt.Rectangle;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -8,6 +9,12 @@ import javax.swing.JSeparator;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import banco.Gerenciador;
+import model.Aluno;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaAluno {
 
@@ -41,12 +48,25 @@ public class TelaAluno {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
+		Gerenciador g = new Gerenciador();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 480, 391);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Cadastro tela = new Cadastro();
+				Rectangle bounds = frame.getBounds();
+				tela.show(bounds.x, bounds.y);
+				frame.dispose();
+				
+			}
+		});
 		btnCadastrar.setBounds(64, 32, 89, 23);
 		frame.getContentPane().add(btnCadastrar);
 		
@@ -63,17 +83,34 @@ public class TelaAluno {
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
-		table = createTable();
+		table = createTable(g);
 		scrollPane.setViewportView(table);
 	}
-	private JTable createTable() {
+	
+	public void show(int x, int y) 
+	{
+		Rectangle bounds = frame.getBounds();
+		frame.setBounds(x,y,bounds.width,bounds.height);
+		frame.setVisible(true);
+		
+	}
+	
+	
+	private JTable createTable(Gerenciador g) {
 		JTable table = new JTable();
 		
 		DefaultTableModel m =
 				(DefaultTableModel)table.getModel();
+		
 		m.addColumn("ra");
 		m.addColumn("Nome");
 		m.addColumn("Curso");
+		
+		for(Aluno a : g.getAlunos())
+		{
+			m.addRow(a.toObject());
+		}
+		
 		return table;
 	}
 }

@@ -1,0 +1,9 @@
+114151;Felipe Feyh;Engenharia de Automação e Controle
+8536;Juliezer da Silva;Engenharia de Automação e Controle
+8537;Nayara R. da Rocha;Culinária
+6969;Yaggo Pikamucha;Vasco da Condor
+636;Débora Schereiner;Educação Física
+1701;Juliana Piaz;Administração
+666;Souza Cruz;Tabacaria
+1;Iego;Defesa contra Arte das Trevas
+2;Aluno 2;Curso A
