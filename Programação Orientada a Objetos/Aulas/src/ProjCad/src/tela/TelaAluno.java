@@ -15,6 +15,8 @@ import model.Aluno;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TelaAluno {
 
@@ -67,12 +69,8 @@ public class TelaAluno {
 				
 			}
 		});
-		btnCadastrar.setBounds(64, 32, 89, 23);
+		btnCadastrar.setBounds(64, 32, 342, 23);
 		frame.getContentPane().add(btnCadastrar);
-		
-		JButton btnAlterar = new JButton("Alterar");
-		btnAlterar.setBounds(306, 32, 89, 23);
-		frame.getContentPane().add(btnAlterar);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 66, 444, 11);
@@ -92,12 +90,24 @@ public class TelaAluno {
 		Rectangle bounds = frame.getBounds();
 		frame.setBounds(x,y,bounds.width,bounds.height);
 		frame.setVisible(true);
-		
 	}
-	
 	
 	private JTable createTable(Gerenciador g) {
 		JTable table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			
+				int linha = table.getSelectedRow();
+				int id = (int)table.getModel().getValueAt(linha, 0);
+				
+				TelaAlt tela = new TelaAlt();
+				Rectangle bounds = frame.getBounds();
+				tela.show(bounds.x,bounds.y);
+				tela.setRegistro(id);
+				frame.dispose();
+			}
+		});
 		
 		DefaultTableModel m =
 				(DefaultTableModel)table.getModel();

@@ -4,6 +4,4 @@
 6969;Yaggo Pikamucha;Vasco da Condor
 636;Débora Schereiner;Educação Física
 1701;Juliana Piaz;Administração
-666;Souza Cruz;Tabacaria
-1;Iego;Defesa contra Arte das Trevas
-2;Aluno 2;Curso A
+666;Suzamara;Gestão

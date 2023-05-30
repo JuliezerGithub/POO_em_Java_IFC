@@ -27,7 +27,7 @@ public class Gerenciador {
 		while((str = in.readLine()) != null) 
 		{
 			String vet[] = str.split(";");
-
+			
 			if(Integer.parseInt(vet[0])== a.getRa()){
 				//Se encontrar um registro academico igual ele retorna false e não cadastra
 				return false;
@@ -75,6 +75,64 @@ public class Gerenciador {
 					
 				return alunos;
 		}
-	
+		public Aluno getAlunobyRA(int ra) {
+			File arquivo = new File(banco_alunos);
+			try(BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo), "UTF-8"))){
+				String str;
+				
+				while((str = in.readLine()) != null) 
+				{
+					String vet[] = str.split(";");
+					
+					if (Integer.parseInt(vet[0])==ra) {
+						Aluno a = new Aluno(ra, vet[1], vet[2]);
+						return a;
+					}
+				}
+		} catch(Exception e)
+			{
+			System.out.println(e.getMessage());
+		}
+			
+		return null;
+		}
+		
+		public void remove(int ra) {
+			
+			LinkedList<Aluno> alunos = getAlunos();
+			int indice=0,aux=0;
+			
+			for(Aluno a : alunos) {
+				
+				if(a.getRa()==ra) {
+					
+					aux = indice;
+				}
+					indice++;
+			}
+					alunos.remove(aux);
+					
+					//Abre o arquivo
+					File arquivo = new File(banco_alunos);
+					arquivo.delete();//Apaga totalmente os arquivos anteriores
+					//Tenta Criar se não existe
+					try {
+						arquivo.createNewFile();
+					} catch (IOException e) {
+						
+						e.printStackTrace();
+					}
+					try(Writer saida = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(arquivo,true), StandardCharsets.UTF_8)))
+					{
+						for(Aluno a : alunos) {
+						saida.append(a.toString()+"\n");
+						}
+						saida.flush();
+						
+					}catch(Exception e) {
+							System.out.println(e.getMessage());
+						}
+					
+		}
 		
 }
